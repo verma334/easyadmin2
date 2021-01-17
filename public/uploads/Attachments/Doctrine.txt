@@ -1,0 +1,176 @@
+
+
+.................CREATING NEW APP....................
+
+> symfony new auth(name)
+
+>bin/console
+
+>composer require make
+
+> bin/console list make
+
+>composer require security
+
+>bin/console make:user
+ > yes
+ > yes (asking for orm)
+
+>composer require orm
+
+>bin/console make:user
+ > yes
+ > yes (asking for orm)
+ > email
+ > password
+
+...FOR FORM CREATION WE WILL ALSO INSTALL......
+
+> composer require form validation twig-bundle
+
+> bin/console make:registration-form
+................................................................................................................................................
+>>> Do you want to add a @UniqueEntity validation annotation on your User class to make sure duplicate accounts aren't created? (yes/no) [yes]:
+ > 
+
+ Do you want to send an email to verify the user's email address after registration? (yes/no) [yes]:
+ > no
+
+ Do you want to automatically authenticate the user after registration? (yes/no) [yes]:
+ > yes
+
+ ! [NOTE] No Guard authenticators found - so your user won't be automatically authenticated after registering.          
+
+ What route should the user be redirected to after registration?:
+  [0] _preview_error
+
+>>>>>>>>>> Then open your browser, go to "/register" and enjoy your new form <<<<<<<<<
+..................................................................................................................................................
+
+>>> for data base make changes in the env file
+
+>bin/console list doctrine
+ >> bin/console doctrine:database:create (SUCCESS)
+
+ >> bin/console make:migration
+ 
+>bin/console doctrine:migration:migrate
+>> now register (it will ask for maindatory code then install profiler)
+
+> composer require symfony/profiler-pack
+
+> bin/console make:auth
+.......................................................................................................................................................
+
+What style of authentication do you want? [Empty authenticator]:
+  [0] Empty authenticator
+  [1] Login form authenticator
+ > 1
+
+ The class name of the authenticator to create (e.g. AppCustomAuthenticator):
+ > LoginFormAuthenticator
+
+ Choose a name for the controller class (e.g. SecurityController) [SecurityController]:
+ > SecurityController
+
+ Do you want to generate a '/logout' URL? (yes/no) [yes]:
+ > 
+
+ created: src/Security/LoginFormAuthenticator.php
+ updated: config/packages/security.yaml
+ created: src/Controller/SecurityController.php
+ created: templates/security/login.html.twig
+
+           
+  Success! 
+           
+
+ Next:
+ - Customize your new authenticator.
+ - Finish the redirect "TODO" in the App\Security\LoginFormAuthenticator::onAuthenticationSuccess() method.
+ - Review & adapt the login template: templates/security/login.html.twig.
+2021-01-07T13:57:38+05:30 [info] Deprecated: Function ReflectionType::__toString() is deprecated
+
+.......................................................................................................................................................
+
+>>>>>>>>>>>>>>> LOGIN FORM IS CREATED <<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ > 0
